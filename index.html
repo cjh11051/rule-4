@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  background: #000;
+  background: linear-gradient(to top right, #5139cf, #46baca);
+}
+
+.onboarding {
+  --page-number: 1;
+  zoom: 0.9;
+}
+.onboarding {
+  height: 640px;
+  width: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.onboarding .slider {
+  width: 300%;
+  height: 100%;
+  display: flex;
+  background-color: #fff;
+  margin-left: calc(-360px * (var(--page-number) - 1));
+  transition: margin-left 400ms;
+}
+.onboarding .slider .slide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.onboarding .slider .slide h1 {
+  margin: 70px 0 40px 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.25em;
+  color: #00bcc2;
+}
+.onboarding .slider .slide img, .onboarding .slider .slide .img {
+  transform: scale(0.7);
+  margin-bottom: 20px;
+}
+.onboarding .slider .slide .img {
+  height: 240px;
+  width: 320px;
+  background-image: url(https://cdn.dribbble.com/users/622814/screenshots/3373149/attachments/733934/appicons__3.png);
+  background-repeat: no-repeat;
+}
+.onboarding .slider .slide .img.chat-bubbles {
+  background-size: 500%;
+  background-position: 10% 41%;
+  position: relative;
+  left: -40px;
+}
+.onboarding .slider .slide .img.swords {
+  background-size: 400%;
+  background-position: 50% 41%;
+}
+.onboarding .slider .slide .img.brain-bulb {
+  background-size: 500%;
+  background-position: 90% 41%;
+  position: relative;
+  left: 40px;
+}
+.onboarding .slider .slide p {
+  margin: 20px;
+  max-width: 250px;
+  font-size: 16px;
+  font-size: 19px;
+  line-height: 1.5em;
+  text-align: center;
+  color: #9e9e9e;
+}
+.onboarding .controls {
+  --h: 167px;
+  height: var(--h);
+  margin-top: calc(var(--h) * -1);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.onboarding .controls form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+}
+.onboarding .controls form input[type=radio] {
+  outline: none;
+  margin: 20px 5px;
+  opacity: 0;
+}
+.onboarding .controls form input[type=radio] + label {
+  position: relative;
+  top: -1px;
+  left: -17px;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  border: 1px solid #ced7e6;
+  transition: border 300ms, background 300ms;
+}
+.onboarding .controls form input[type=radio]:checked + label {
+  border: 1px solid #68e0e3;
+  background-color: #68e0e3;
+}
+.onboarding .controls a.btn-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  height: 65px;
+  background: #02C1C5;
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.thumbnail {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("https://s9.postimg.org/mv4hbyhhr/thumbnail.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+
+@media screen and (max-width: 400px) {
+  .thumbnail {
+    display: block;
+  }
+}
+.img.bubbles {
+  height: 200px;
+}
+
+.toast {
+  padding: 20px;
+  background-color: #212121;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.toast a {
+  margin-left: 4px;
+  text-decoration: none;
+  color: #abcdef;
+}
+    </style>
+    </head>
+  
+  <body> 
+<div class="onboarding">
+  <div class="slider">
+    <div class="slide">
+      <h1>방송규칙을 설명드리기전에</h1>
+<!--       <img src="https://s9.postimg.org/i65ness8f/chat-bubbles.png" alt="chat bubbles"> -->
+      <div class="img chat-bubbles"></div>
+      <p>이 웹사이트는 설아님을 위해 만든 웹 사이트 입니다</p>
+    </div>
+    <div class="slide">
+      <h1>방송 규칙에는 이런것이 있습니다</h1>
+<!--       <img src="https://s9.postimg.org/7qzh5k2nz/swords.png" alt="swords"> -->
+      <div class="img swords"></div>
+      <p>무지성 뇌절 및 시비 절대 금지,타스 언급 먼저 하기 전에 언급 금지입니다</p>
+    </div>
+    <div class="slide">
+      <h1>방송 규칙에는 이런것도 있습니다</h1>
+<!--       <img src="https://s9.postimg.org/l7wfosv3j/brain-bulb.png" alt="brain bulb"> -->
+      <div class="img brain-bulb"></div>
+      <p>제발 스트리머와 기싸움 하려고 하지마세요 
+        이 갈리면 mbti 안맞는거니 나가시면 됩니다</p>
+    </div>
+  </div>
+  <div class="controls">
+    <form>
+      <input type="radio" name="page" checked>
+      <label for="page"></label>
+      <input type="radio" name="page">
+      <label for="page"></label>
+      <input type="radio" name="page">
+      <label for="page"></label>
+    </form>
+    <a href="#" class="btn-next">Next</a>
+  </div>
+</div>
+
+<!-- <div class="thumbnail">
+  <a href="https://codepen.io/enahom99/full/EEgPQP/">
+    <img src="" alt="">
+  </a>
+</div> -->
+
+
+<div class="toast">View in <a href="#" target="_blank">Full Page</a></div>
+  </body>
+  <script>
+    if (location.href.includes('full')) {
+  document.querySelector('.toast').parentElement.removeChild(document.querySelector('.toast'));
+}
+
+window.addEventListener('load', event => {
+  const onboarding = document.querySelector('.onboarding');
+  const bookmarks = document.querySelectorAll("form input[type=\"radio\"]");
+  const btnNext = document.querySelector("a.btn-next");
+  btnNext.addEventListener("click", (e) => {
+    const pageNumber = parseInt(getComputedStyle(onboarding).getPropertyValue('--page-number')) + 1;
+    if (pageNumber < 4) {
+      onboarding.style.setProperty('--page-number', pageNumber);
+      bookmarks[pageNumber-1].checked = true;
+    }
+    else {
+      onboarding.style.setProperty('--page-number', 1);
+      bookmarks[0].checked = true;
+    }
+  });
+  
+});
+  </script>
+</html>
